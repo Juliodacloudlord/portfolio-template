@@ -1,0 +1,325 @@
+<!-- 
+  Flask template documentation:
+  https://flask.palletsprojects.com/en/2.0.x/tutorial/templates/ 
+-->
+
+<!-- TODO:  Replace some values in this template with variables. 
+            e.g: name, phone number, etc.
+-->
+
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ name }}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/static/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- 
+      TODO: Serve static files. 
+
+      The website template gives us HTML. We must replace this HTML with Jinja
+      code that will render the equivalent HTML. We should use `url_for` method.
+      
+
+      Here the folder is `static`, the filename is css/[file].css
+
+      Flask static files documentation:
+      https://flask.palletsprojects.com/en/2.0.x/tutorial/static/
+    -->
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/aos.css') }}">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/bootstrap.min.css') }}">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/main.css') }}">
+
+    <noscript>
+      <style type="text/css">
+        [data-aos] {
+            opacity: 1 !important;
+            transform: translate(0) scale(1) !important;
+        }
+      </style>
+    </noscript>
+  </head>
+  <body id="top">
+    <header>
+      <div class="profile-page sidebar-collapse">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-transparent bg-primary" color-on-scroll="400">
+          <div class="container">
+           
+              <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-bar bar1"></span><span class="navbar-toggler-bar bar2"></span><span class="navbar-toggler-bar bar3"></span></button>
+            </div>
+            <div class="collapse navbar-collapse justify-content-end" id="navigation">
+              <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="#skill">Skills</a></li>
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="#experience">Experience</a></li>
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="#contact">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <div class="page-content">
+      <div>
+<div class="profile-page">
+  <div class="wrapper">
+    <div class="page-header page-header-small" filter-color="yellow">
+      <div class="page-header-image" data-parallax="true" style="background-image: url({{ url_for('static', filename='Nashville.jpeg') }} )"></div>
+      <div class="container">
+        <div class="content-center">
+          <div class="cc-profile-image"><a href="#"><img src="{{ url_for('static', filename='images/Glaze_folio.jpg') }} " alt="Image"/></a></div>
+          <div class="h2 title"> {{ name }} </div>
+          <p class="category text-white">{{ role }}</p>
+            <a class="btn btn-primary smooth-scroll mr-2" href="#contact" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Hire Me</a>
+            <a class="btn btn-primary" target="_blank" href="{{ url_for('static',filename='general_swe_resume_lenz_paul_nov_2021.pdf') }}" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Download CV</a>
+            <!-- TODO: -->
+        </div>
+      </div>
+      <div class="section">
+        <div class="container">
+          <div class="button-container">
+            <a class="btn btn-default btn-round btn-lg btn-icon" target="_blank" href="https://github.com/Juliodacloudlord" rel="tooltip" title="Follow me on Github"><i class="fa fa-github"></i></a>
+            <a class="btn btn-default btn-round btn-lg btn-icon" target="_blank" href="https://www.linkedin.com/in/johnhayes48" rel="tooltip" title="Follow me on LinkedIn"><i class="fa fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section" id="about">
+  <div class="container">
+    <div class="card" data-aos="fade-up" data-aos-offset="10">
+      <div class="row">
+        <div class="col-lg-6 col-md-12">
+          <div class="card-body">
+            <div class="h4 mt-0 title">About</div>
+            <p>An emerging systems engineer, with a introductory knowledge of Google Cloud, an extensive background of leadership and experience in various organizations and trades including in the Agriculture and Political fields. Intent on master the uses of machine learning while earning multitude of certifications including but not limited to the Cisco CCNA and CCSP , and Google Cloud Architect, and AWS  certifications.</p>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-12">
+          <div class="card-body">
+            <div class="h4 mt-0 title">Basic Information</div>
+            <div class="row">
+              <div class="col-sm-4"><strong class="text-uppercase">Age:</strong></div>
+              <div class="col-sm-8">25</div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-sm-4"><strong class="text-uppercase">Email:</strong></div>
+              <div class="col-sm-8">jahayesjr.37@gmail.com</div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-sm-4"><strong class="text-uppercase">Phone:</strong></div>
+              <div class="col-sm-8">773.430.4461</div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-sm-4"><strong class="text-uppercase">Location:</strong></div>
+              <div class="col-sm-8">Metropolitan Nashville Area</div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-sm-4"><strong class="text-uppercase">Language:</strong></div>
+              <div class="col-sm-8">English, Spanish(Latin American)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section" id="skill">
+  <div class="container">
+    <div class="h4 text-center mb-4 title">Professional Skills</div>
+    <div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+      <div class="card-body">
+        <b>Programming Languages:</b> C++,JavaScript, Python, SQL<br><br>
+        <b>Tools:</b> AWS, Google Cloud Platform <br><br>
+        <b>Database Management Systems:</b> MySQL, <br><br>
+        <b>Internet Technologies:</b>HTML5, CSS <br><br>
+        <b>Soft skills:</b> Public speaking, leadership, communication, team work, conflict resolution, Facilitator, Policy Consulting <br><br>  
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="experience">
+  <div class="container cc-experience">
+    <div class="h4 text-center mb-4 title">Work Experience</div>
+    <div class="card">
+      <div class="row">
+        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-experience-header">
+            <p>June 2021 - Present</p>
+            <div class="h5">Google</div>
+          </div>
+        </div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5">Cloud Engineering Fellow</div>
+            <p>
+              <ul>
+                <li>Was a part of a new pilot program, sponsored by Google in which students were taught the basics of coding, as well as introduced to the infrastructure of Google Cloud. Obtaining the Google Cloud Digital Leader and Associate Cloud Engineer certifications are the main objectives of this course.
+              </ul>
+              </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row">
+        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-experience-header">
+            <p>August 2018 - January 2020</p>
+            <div class="h5">Everest Campus-Student Quarters</div>
+          </div>
+        </div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5">Leasing Consultant-Full Time</div>
+            <p>
+              <ul>
+                <li>Led a group of leasing consultants and trained several more as we increased lease sales by 30% in one of our locations, while serving as support tech for all three of them. supervised a group of technicians as we updated our network infrastructure in our 93-unit apartment complex. Served as first level support for server maintenance.
+              </ul>
+              </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row">
+        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-experience-header">
+            <p>September 2017 - February 2018</p>
+            <div class="h5">Hobson for Congress</div>
+          </div>
+        </div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5">Campaign Committee Chairman</div>
+            <p>
+              <ul>
+                <li>I programmed events, wrote speeches, fund-raised, and organized voter databases and analytics to assess the viability for Rickey Hobson to represent Tennessee’s US 8th Congressional District. Mr. Hobson opted to drop out of the race.</li>   
+              </ul>
+              </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row">
+        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-experience-header">
+            <p>June 2017 -  July 2018</p>
+            <div class="h5">Karl Dean for Governor</div>
+          </div>
+        </div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5">Intern</div>
+            <p>
+              <ul>
+                <li>Demonstrated my teaching ability by leading and training a network of 120 canvassers and volunteers that stretched the northwest portion of Middle Tennessee. Furthermore analyzed statistics, policies, and implements machine learning to maximize donations from perspective donors. Also performed data entry and general IT setup to set up a gubernatorial run for Karl Dean.</li> 
+              </ul>
+              </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row">
+        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-experience-header">
+            <p>September 2014 - August 2015<p>
+            <div class="h5">Walmart</div>
+          </div>
+        </div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5">Electronic Sales Associate (Hendersonville, Tennessee) </div>
+            <p>
+              <ul>
+                <li>Served as a marketer and an advisor in selling items in the electronics department demonstrating stellar customer service. This customer service led to becoming one of the recipients of the Sam Walton Award</li> 
+              </ul>
+              </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section">
+  <div class="container cc-education">
+    <div class="h4 text-center mb-4 title">Education</div>
+    <div class="card">
+      <div class="row">
+        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-education-header">
+            <p>2015-2018, 2021-present</p>
+            <div class="h5">Bachelor's Degree (in progress)</div>
+          </div>
+        </div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5">B.Sc in Political Science Minors in Pre-Law, and Computer Science</div>
+            <p class="category">University of Tennessee at Martin, Middle Tennessee State University</p>
+              <b>Organizations:</b>
+              <ul>
+                <li><b>Weakley County Democratic Party<b>
+    		<li> Executive Board (2017-2019) • Candidate Recruitment Chairman (2018) 
+                <li><b>College Democrats of America<b>
+                <li>National Black Caucus Vice President/Secretary 2017-2019 • National Black Caucus President (2019-2020) 
+                  </li>
+              </ul>
+          </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+<div class="section" id="contact">
+  <div class="cc-contact-information" style="background-image: url({{ url_for('static', filename='images/staticmap.png') }})">
+    <div class="container">
+      <div class="cc-contact">
+        <div class="row">
+          <div class="col-md-9">
+            <div class="card mb-0" data-aos="zoom-in">
+              <div class="h4 pl-3 title">Contact Me</div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="card-body">
+                    <p class="mb-0"><strong>Phone</strong></p>
+                    <p class="pb-2">{{ phone }}</p>
+                    <p class="mb-0"><strong>Email</strong></p>
+                    <p>{{ email }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></div>
+    </div>
+    <footer class="footer">
+      <div class="container text-center">
+        <a class="cc-google-plus btn btn-link" target="_blank" href="https://github.com/Juliodacloudlord"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>
+        <a class="cc-instagram btn btn-link" target="_blank" href="https://www.linkedin.com/in/lenztpaul/"><i class="fa fa-linkedin fa-2x " aria-hidden="true"></i></a>
+      </div>
+      <div class="h4 title text-center">{{ name }}</div>
+      <div class="text-center text-muted">
+        <p>&copy; Creative CV. All rights reserved.<br>Design - <a class="credit" href="https://templateflip.com" target="_blank">TemplateFlip</a></p>
+      </div>
+    </footer>
+    <script src="{{ url_for('static',filename='js/core/jquery.3.2.1.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/core/popper.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/core/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/now-ui-kit.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/aos.js') }}"></script>
+    <script src="{{ url_for('static',filename='scripts/main.js') }}"></script>
+  </body>
+</html>
